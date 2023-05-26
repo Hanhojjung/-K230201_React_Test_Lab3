@@ -1,0 +1,114 @@
+부교재
+출처:리액트 다루는 기술
+
+필요한 부분만 내용전달.
+
+@ 웹팩 설명,
+import 해서 모듈을 가져와서 사용.
+Node.js 브라우저 환경이아니라, 윈도우즈 환경에서도 js 언어를 사용가능.
+Node.js import 를 안쓰고, require 이용해서 호출함. 참고만.
+
+해당 모듈을 불러오는 기능을 -> 번들러, 번들(bundle) 묶는다.
+파일을 묶어서 연결해준다.
+담당하는 프로그램의 이름이 : 웹팩 , (번들러 프로그램 이야기함. )
+다양한, 요소를 불러와서 사용할수 있다.
+svg 파일, 파일, 미디어 파일 등.
+
+바벨 -> 현재 웹브라우저에서 최신 js 문법을 다 지원합니다.
+하지만, 옛날 버전의 js 문법을 변환해주는 역할(컴파일러 역할)-> 바벨
+바벨, 이미 구버전으로 개발한 문법이 있는데 이것들을 호환시켜주기 위해서
+바벨 필요한.
+
+CRA -> create-react-app 실행 하게되면 : 웹팩 + 바벨 기능이 포함. 등.
+yarn create react-app class-examples
+
+@jsx 자바스크립트의 문법?
+리액트 프로젝트를 개발할 때 사용되는 공식적인 문법은아니다.
+바벨 여러 문법을 지원해주는 plugin 설정.
+바벨을 통해서 임의로 만든 문법. jsx 이다.
+
+@ index.js
+<React.StrictMode> 뭐냐?
+리액트 레거시 기능들을 사용하지 못하게 하는 기능.
+앞으로 사용 안될 기능들을 필터.
+예) ref, componentWillMount ,
+
+@ jsx 문법 작성시
+반드시, 부모 쪽의 태그가 필요함.
+ex)
+<div>
+<KoreanFood name="설렁탕" cost={9000} />
+<KoreanFood name="돼지국밥" cost={8500} />
+</div>
+
+div 태그 생략시 jsx 문법 오류가남.
+
+@ 부모 태그에 div 가 아닌 임의 태그를 작성하는데
+v16 이상 도입된.
+Fragment
+
+사용법)
+import { Fragment } from 'react';
+
+function App() {
+return (
+<div> -> 대신에
+<Fragment>
+<h1>테스트 </h1>
+</Fragment>
+
+)
+}
+
+해당 Fragment 생략도 가능함.
+
+function App() {
+return (
+<div> -> 대신에
+<Fragment> -> 대신에 <>
+<>
+<h1>테스트 </h1>
+</>
+
+)
+}
+
+@ es6 , var ,let 스코프 범위. 호이스팅(끌어올리기)
+var -> 함수 범위 스코프
+let -> 블록 단위 스코프
+ex)
+function test() {
+var a = "hi"; // 처음 할당.
+if(true) {
+var a = "bye"; //2번째 할당
+console.log(a); // bye 출력됨.
+// if 문안의 블록에서도 bye 출력됨
+}
+// if 문 밖에서 , 함수 영역이이라서, bye 출력됨.
+console.log(a); // bye 출력됨.
+}
+
+test()
+
+웹브라우저에서 검색시 , 바닐라 기본 js 선택.
+codesandbox
+
+ex)
+function test() {
+let a = "hi"; // 처음 할당.
+if(true) {
+let a = "bye"; //2번째 할당
+console.log(a); // bye 출력됨.
+// if 문안의 블록에서도 bye 출력됨
+}
+// if 문 밖에서 , 함수 영역이이라서, bye 출력됨.
+console.log(a); // hi 출력됨.
+}
+test()
+
+변수 형을 사용시, 평상시에는 변경되지 않는 형태는 무조건 const 형으로 변수 선언하면되고.
+let은 변경이 된다면, 이 형태로 선언해서 사용하면 됩니다.
+비교,
+안드로이드 , 코틀린에서 ,var, val(=const)
+평상시에는 무조건 val 선언해서 사용하고, 변경이 된다면 var 사용하기.
+!

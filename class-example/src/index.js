@@ -6,16 +6,17 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import ConfirmDialog from './ch04/ConfirmDialog';
 import Tick from './ch04/Tick';
+import Weekend from './ch04_ex/Weekend';
 
 //setInterval(콜백함수, 시간(ms)) -> 특정 시간마다, 첫번째 매개변수에서 정의한 함수가 실행한다.
 //ReactDOM
 setInterval( () => {
   ReactDOM.render(
     <React.StrictMode>
-    <Tick/>
+    <Weekend/>
     </React.StrictMode>,
     document.getElementById('root')
-  );
+  );  
 }, 1000
 );
 
