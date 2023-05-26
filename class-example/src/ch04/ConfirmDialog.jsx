@@ -8,6 +8,7 @@ const ConfirmDialog = props => {
         <div>
             <p>내용 확인</p>
             <Button color="green">확인</Button>
+            <Button color="red">확인2</Button>
         </div>
     );
 };
