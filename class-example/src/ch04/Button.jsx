@@ -1,3 +1,6 @@
+//Button.jsx
+//함수형 컴포넌트인데, 함수모양, 기존의 함수 키워드 사용.
+
 import React from 'react';
 function Button(props)
 {

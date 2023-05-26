@@ -1,3 +1,6 @@
+//ConfirmDialog.jsx
+//rsc를 입력하면 
+
 import React from 'react';
 import Button from './Button';
 const ConfirmDialog = props => {
