@@ -1,0 +1,96 @@
+@보충 자료
+굉장히 리액트에 자주 반복적으로 나오는 배열 관련 연산자 및 구조입니다.
+꼭 반드시 정독 부탁합니다. 
+확인, 크롬의 개발자도구f12 에서 , 콘솔에서 테스트 가능. 
+줄 넘김하는 방법 shift + enter
+
+#map_내장함수, #비구조화할당 ,
+#spread연산자, #filter내장함수
+
+@자바스크립트의 내장 함수 map
+arr : 배열
+arr.map(callback,[thisArg])
+
+callback : 새로운 배열의 요소를 생성하는 함수.
+thisArg(옵션) : callback 함수 내부에서 사용할 this 레퍼런스
+
+예)
+var numbers = [ 1,2,3]
+var test = numbers.map(function (num) {
+return num * num ;});
+console.log(test);
+예2)
+var numbers2 = [ 4,5,6]
+var test2 = numbers2.map(num =>
+num * num );
+console.log(test2);
+
+@비구조화 할당
+예제)
+전, 비구조화 할당
+배열 형태의 자료구조에서 할당 방법.
+const array = [1,2,3];
+const one = array[0];
+const two = array[1];
+const three = array[2];
+
+비구조화 할당 사용 하면.
+const array = [1,2,3];
+const [ one, two, three ] = array;
+console.log(three)
+
+응용 useState(1)-> 호출하면, 배열을 반환, 첫번째 변수의 값 할 당.
+두번째, set 함수가 할당이 된다.
+결과 : [첫번째 변수의 값, set 함수가 할당.]
+ex)
+const [message, setMessage] = useState('');
+
+@spread 연산자. 복사하는 것 처럼.
+객체를 예를 들어서,
+문법: 점 3개를 표시 해당 객체 또는 배열 사용하면 됩니다.
+crud 치면 , insert
+ex1)
+const object = {a:1, b:2, c:3};
+//...object 사본을 만드는 역할. b:2 추가하는 역할.
+const nextObject = { ...object , d:2};
+console.log(nextObject)
+
+ex2)concat 함수 이용해서 만들기.
+const array2 = [{a:1}, {b:2}, {c:3}];
+const nextArray2 = array2.concat({d:4})
+console.log(nextArray2)
+
+@ filter내장함수
+:해당 조건에 만족하는 값만으로해서 새로운 배열을 생성.
+문법:
+array.filter(callback(element[, index[, array]])[, thisArg])
+• array: 필터링할 대상 배열
+• callback: 각 요소에 대해 실행할 콜백 함수
+• element: 현재 처리 중인 요소
+• index (선택적): 현재 처리 중인 요소의 인덱스
+• array (선택적): filter()를 호출한 배열
+thisArg (선택적): 콜백 함수 내부에서 this로 사용될 객체
+
+crud, 삭제 기능으로 많이 사용되는 방식을 filter 방식으로 설정 가능.
+
+
+delete 방식.
+const array2 = [{id:1}, {id:2}, {id:3}];
+const nextArray2 = array2.concat({id:4})
+console.log(nextArray2)
+//여기에 만약 아이디가 2인 객체를 삭제한다면, 아이디가 2번 인요소를 제외하고
+//새로운 배열을 생성하는 것과 똑같다.
+nextArray2.filter(item => item.id !==2);
+
+ex4)
+응용 id가 1인 항목을 value 을 false 로 설정.
+const array2 = [{id:1,value:true}, {id:2, value:true},
+{id:3,value:false}];
+const nextArray2 = array2.concat({id:4})
+
+console.log(nextArray2)
+삼항 다항식. -> JSX 안에서 if ~ else 사용못해요.
+표현식으로 나타내어야 함.
+문법 : (조건식) ? : true 일경우 실행항 문장 : false 일경우 실행항 문장
+nextArray2.map(item => (item.id ===1 ? {
+...item,value:false} : item));
