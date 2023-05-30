@@ -2,7 +2,7 @@
 import React from "react";
 import logo from "./img1.jpg";
 import AvatarImg from "./AvatarImg";
-
+//자식 컴포넌트 
 const styles = {
   wrapper: {
     margin: 10,
