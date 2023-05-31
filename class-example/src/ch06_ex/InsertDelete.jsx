@@ -27,7 +27,7 @@ const InsertDelete = () => {
     console.log(inputText);
 
     const onChange2 = (e) => setInputMsg(e.target.value);
-    console.log(inputText);
+    console.log(inputMsg);
 
     const onclick = () => {
         const nextNames = names.concat({
