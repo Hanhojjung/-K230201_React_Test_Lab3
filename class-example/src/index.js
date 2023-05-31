@@ -16,6 +16,12 @@ import InsertDelete from './ch06_ex/InsertDelete';
 import Counter from './ch07/Counter';
 import TestBefore from './ch7-2-useMemo/TestBefore';
 import TestAfter from './ch7-2-useMemo/TestAfter';
+import BeforeUseCallback from './ch7-3-AfterUseCallback/BeforeUseCallback';
+import AfterUseCallback from './ch7-3-AfterUseCallback/AfterUseCallback';
+import TextInputTest from './ch07/TextInputTest';
+import Accomodate from './ch07_ex/Accomodate';
+import Toggle from './ch8/Toggle';
+import LandingPage from './ch9_ex/LandingPage';
 
 // 생명 주기를 테스트를 하는 코드에서는, React.StrictMode를 제거하고 실행하는게 가독성 면에서 좋습니다. 
 // 수행이 2번씩 일어나기 때문.
@@ -24,7 +30,13 @@ ReactDOM.render(
     {/* <InsertDelete/> */}
     {/* <Counter/> */}
     {/* <TestBefore/> */}
-    <TestAfter/>
+    {/* <TestAfter/> */}
+    {/* <BeforeUseCallback/> */}
+    {/* <AfterUseCallback/> */}
+    {/* <TextInputTest/> */}
+    {/* <Accomodate/> */}
+    {/* <Toggle/> */}
+    <LandingPage/>
   </React.StrictMode>,
   document.getElementById('root')
 )
