@@ -22,6 +22,8 @@ import TextInputTest from './ch07/TextInputTest';
 import Accomodate from './ch07_ex/Accomodate';
 import Toggle from './ch8/Toggle';
 import LandingPage from './ch9_ex/LandingPage';
+import AttendanceBook from './ch10_ex/AttendanceBook';
+import NameForm from './ch11/NameForm';
 
 // 생명 주기를 테스트를 하는 코드에서는, React.StrictMode를 제거하고 실행하는게 가독성 면에서 좋습니다. 
 // 수행이 2번씩 일어나기 때문.
@@ -36,7 +38,9 @@ ReactDOM.render(
     {/* <TextInputTest/> */}
     {/* <Accomodate/> */}
     {/* <Toggle/> */}
-    <LandingPage/>
+    {/* <LandingPage/> */}
+    {/* <AttendanceBook/> */}
+    <NameForm/>
   </React.StrictMode>,
   document.getElementById('root')
 )
