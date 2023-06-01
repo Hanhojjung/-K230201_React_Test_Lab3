@@ -24,6 +24,10 @@ import Toggle from './ch8/Toggle';
 import LandingPage from './ch9_ex/LandingPage';
 import AttendanceBook from './ch10_ex/AttendanceBook';
 import NameForm from './ch11/NameForm';
+import FileImageTest from './ch11/FileImageTest';
+import TestNullValue from './ch11/TestNullValue';
+import Form from './ch11_ex/Form';
+import Calc from './ch12/Calc';
 
 // 생명 주기를 테스트를 하는 코드에서는, React.StrictMode를 제거하고 실행하는게 가독성 면에서 좋습니다. 
 // 수행이 2번씩 일어나기 때문.
@@ -40,10 +44,18 @@ ReactDOM.render(
     {/* <Toggle/> */}
     {/* <LandingPage/> */}
     {/* <AttendanceBook/> */}
-    <NameForm/>
+    {/* <FileImageTest/> */}
+    {/* <NameForm/> */}
+    {/* <TestNullValue/> */}
+    {/* <Form/> */}
+    <Calc/>
   </React.StrictMode>,
   document.getElementById('root')
-)
+);
+
+// setTimeout(() => {
+//   ReactDOM.render(<input value={null}/>, document.getElementById('root'))
+// }, 1000);
 
 //setInterval(콜백함수, 시간(ms)) -> 특정 시간마다, 첫번째 매개변수에서 정의한 함수가 실행한다.
 //ReactDOM
