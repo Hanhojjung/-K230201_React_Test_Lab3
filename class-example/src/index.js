@@ -33,6 +33,7 @@ import ProfileCard from './ch13_ex/ProfileCard';
 import Main from './ch14/Main';
 import MainPage from './ch15/MainPage';
 import Sample from './ch15/Sample';
+import Blocks from './ch15_ex/Blocks';
 
 // 생명 주기를 테스트를 하는 코드에서는, React.StrictMode를 제거하고 실행하는게 가독성 면에서 좋습니다. 
 // 수행이 2번씩 일어나기 때문.
@@ -58,7 +59,8 @@ ReactDOM.render(
     {/* <ProfileCard/> */}
     {/* <Main/> */}
     {/* <MainPage/> */}
-    <Sample/>
+    {/* <Sample/> */}
+    <Blocks/>
 
   </React.StrictMode>,
   document.getElementById('root')
