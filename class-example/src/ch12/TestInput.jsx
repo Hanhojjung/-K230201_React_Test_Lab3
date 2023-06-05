@@ -27,7 +27,7 @@ const TestInput = (props) => {
     return (
         <div>
             <fieldset>
-                <legend>섭씨 온도를 입력하세요 : (단위:{sNames[props.scale]})</legend>
+                <legend>온도를 입력하세요 : (단위:{sNames[props.scale]})</legend>
                 {/* <input value={temp} onChange={handleChange}/> */}
                 <input value={props.temp} onChange={handleChange}/>
                 {/* 공유 state로 온도를 사용하기. */}
