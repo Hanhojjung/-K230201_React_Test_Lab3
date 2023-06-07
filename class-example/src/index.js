@@ -1,4 +1,16 @@
-import React from 'react';
+// 건너가는 작업. useState, UseCallback
+// useCallback -> 업데이트 시 매번 함수가 새롭게 생성되면 된다? 안된다
+// useCallback(콜백함수, 의존성배열) -> 의존성 배열 3가지 
+
+
+// 추가 라우팅 : route(길), router(길 안내자), routing(길 안내를 한다.)
+// URL 라우팅 -> 페이징 라우팅
+// EX) https://www.example.com : 호스트 서버 
+// EX) https://www.example.com/tests -> tests : path
+// BrowserRouter : 웹 브라우저의 히스토리 기능을 이용해서 페이지 라우팅 하는 형식임.
+// Routes, Route
+import { BrowserRouter } from 'react-router-dom';
+import React, { useState,useCallback} from 'react';
 import ReactDOM from 'react-dom';
 //'react-dom-client' -> 'react-dom'
 import './index.css';
@@ -34,11 +46,24 @@ import Main from './ch14/Main';
 import MainPage from './ch15/MainPage';
 import Sample from './ch15/Sample';
 import Blocks from './ch15_ex/Blocks';
+import CallbackTest2 from './ch17-pdtest/CallbackTest2';
+import ItemList from './ch17-pdtest/ItemList';
+import Categories from './ch17-pdtest/Categories';
+
 
 // 생명 주기를 테스트를 하는 코드에서는, React.StrictMode를 제거하고 실행하는게 가독성 면에서 좋습니다. 
 // 수행이 2번씩 일어나기 때문.
+// App.js (최고 부모) -> 1) Categories 2) ItemList
+// const [category, setCategory] = useState('food')
+// const onSelect = useCallback(category => setCategory(category),[])
+
+// 순서2. 위에 설정한 BrowserRouter를 
+// 최고 부모의 컴포넌트를 감싸면 됩니다.
+// 라우팅 시 
 ReactDOM.render(
   <React.StrictMode>
+    <BrowserRouter>
+    <App/>
     {/* <InsertDelete/> */}
     {/* <Counter/> */}
     {/* <TestBefore/> */}
@@ -60,8 +85,12 @@ ReactDOM.render(
     {/* <Main/> */}
     {/* <MainPage/> */}
     {/* <Sample/> */}
-    <Blocks/>
-
+    {/* <Blocks/> */}
+    {/* <CallbackTest2/> */}
+    {/* <ItemList/> */}
+    {/* <Categories category={category} onSelect={onSelect}/>
+    <ItemList category={category}/> */}
+    </BrowserRouter>
   </React.StrictMode>,
   document.getElementById('root')
 );
