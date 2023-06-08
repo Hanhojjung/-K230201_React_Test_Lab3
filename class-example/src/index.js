@@ -47,8 +47,9 @@ import MainPage from './ch15/MainPage';
 import Sample from './ch15/Sample';
 import Blocks from './ch15_ex/Blocks';
 import CallbackTest2 from './ch17-pdtest/CallbackTest2';
-import ItemList from './ch17-pdtest/ItemList';
 import Categories from './ch17-pdtest/Categories';
+import ItemList from './ch17-pdtest/ItemList';
+import ItemList2 from './test230608/ItemList2';
 
 
 // 생명 주기를 테스트를 하는 코드에서는, React.StrictMode를 제거하고 실행하는게 가독성 면에서 좋습니다. 
@@ -87,7 +88,6 @@ ReactDOM.render(
     {/* <Sample/> */}
     {/* <Blocks/> */}
     {/* <CallbackTest2/> */}
-    {/* <ItemList/> */}
     {/* <Categories category={category} onSelect={onSelect}/>
     <ItemList category={category}/> */}
     </BrowserRouter>

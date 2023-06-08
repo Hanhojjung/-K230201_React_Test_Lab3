@@ -5,6 +5,8 @@ import ItemList from './ch17-pdtest/ItemList';
 import { useCallback, useState } from 'react';
 import { Route, Routes } from 'react-router-dom';
 import ItemsPage from './ch17-pdtest/pages/ItemsPage';
+import ItemsPage2 from './test230608/ItemsPage2';
+
 
 function App() {
   // 현재, 공통 state, 부모 컴포넌트 App.js에서 관리하고 있고
@@ -18,8 +20,8 @@ function App() {
 // 방법2 페이지 라우팅
 return(
   <Routes>
-    <Route path='/' element={<ItemsPage/>}/>
-    <Route path='/:category' element={<ItemsPage/>}/>
+    <Route path='/' element={<ItemsPage2/>}/>
+    <Route path='/:category' element={<ItemsPage2/>}/>
   </Routes>
 );
 }
